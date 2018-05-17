@@ -22,6 +22,10 @@ export class ListPage {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
+    const firestore = firebase.firestore();
+  const settings = {/* your settings... */ timestampsInSnapshots: true};
+  firestore.settings(settings);
+  
     var db = firebase.firestore();
 
     // db.collection("tag").doc("6cbgPbvOVX7jyLI5wiXO").collection("comment").add({content: "Mon titre"}); Pour l'ajout
@@ -42,14 +46,12 @@ export class ListPage {
 
     this.icons = 'beer';
 
-        db.collection("tag").doc("6cbgPbvOVX7jyLI5wiXO").collection("title").get().then( (collection)=> {
+        db.collection("tag").doc("6cbgPbvOVX7jyLI5wiXO").get().then( (tag)=> {
       //var docs = collection.docs;
+        console.log(tag);
+        this.TheTitle = tag.data().name;
+      });
 
-      for(var doc of collection.docs) {
-        this.TheTitle.push(doc.data());
-      }
-      
-    } );
 
     /*this.Comments = ['Premier commentaire', 'Deuxième commentaire', 'beer', 'football', 'basketball', 'paper-plane',
     'american-football', 'boat', 'bluetooth', 'build'];*/
@@ -57,30 +59,32 @@ export class ListPage {
     // this.TheUser = "BenJ";
 
 
-        db.collection("tag").doc("6cbgPbvOVX7jyLI5wiXO").collection("owner").get().then( (collection)=> {
-      //var docs = collection.docs;
+    //     db.collection("tag").doc("6cbgPbvOVX7jyLI5wiXO").collection("owner").get().then( (collection)=> {
+    //   //var docs = collection.docs;
 
-      for(var doc of collection.docs) {
-        this.TheUser.push(doc.data());
-      }
+    //   for(var doc of collection.docs) {
+    //     this.TheUser = doc.data();
+    //   }
       
-    } );
+    // } );
 
     // this.TheTitle = "Tag1";
 
 //Ici on récupère la collection de[] tag
-    this.Comments = [];
-    db.collection("tag").doc("6cbgPbvOVX7jyLI5wiXO").collection("comment").get().then( (collection)=> {
-      //var docs = collection.docs;
+    this.Comments = ["Ceci est un commentaire"];
+    // db.collection("tag").doc("6cbgPbvOVX7jyLI5wiXO").collection("comment").get().then( (collection)=> {
+    //   //var docs = collection.docs;
 
-      for(var doc of collection.docs) {
-        this.Comments.push(doc.data());
-      }
+    //   for(var doc of collection.docs) {
+    //     // this.Comments.push(doc.data());
+    //     this.Comments = doc.data();
+    //   }
       
-    } );
+    // } );
 
     this.items = [];
     // for (let i = 0; i < this.icons.length; i++) {
+      // console.log(this.TheTitle);
       this.items.push({
         Name: this.TheTitle,
         Comment: this.Comments,
