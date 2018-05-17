@@ -25,6 +25,7 @@ export class MyApp {
       { title: 'Ajouter', component: HomePage },
       { title: 'Liste', component: ListPage }
 
+
     ];
 
   }

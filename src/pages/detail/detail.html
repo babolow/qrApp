@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Detail tag</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+   <ion-card *ngIf="tag">
+    <ion-card-header>
+      <h2>Commentaires
+        <ion-badge color="primary">{{tag.Comment}}</ion-badge>
+      </h2>
+    </ion-card-header>
+
+  </ion-card>
+</ion-content>
