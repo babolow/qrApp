@@ -11,10 +11,11 @@
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <!--<div class="item-note" item-end>
+      {{ item | json }}
+      {{item.Name}}
+      <div class="item-note" item-end>
         {{item.Comment}}
-      </div>-->
+      </div>
     </button>
   </ion-list>
   <div *ngIf="selectedItem" padding>
