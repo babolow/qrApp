@@ -28,8 +28,6 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Ajouter', component: AddPage },
-      { title: 'Liste', component: ListPage }
-      { title: 'Ajouter', component: HomePage },
       { title: 'Liste', component: ListPage },
       { title: 'Connexion', component: LoginPage }
 
