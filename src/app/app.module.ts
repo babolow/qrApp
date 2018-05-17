@@ -6,16 +6,21 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { TagDetail } from '../pages/detail/detail';
+import { AddPage } from '../pages/add/add';
+import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    TagDetail
+    TagDetail,
+    AddPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -26,11 +31,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    TagDetail
+    TagDetail,
+    AddPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
