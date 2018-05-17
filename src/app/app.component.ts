@@ -3,10 +3,10 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { AddPage } from '../pages/add/add';
 import { LoginPage } from '../pages/login/login';
+import { ScanPage } from '../pages/scan/scan';
 
 import firebase from 'firebase';
 import { Config } from './config';
@@ -26,12 +26,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Ajouter', component: AddPage },
-      { title: 'Liste', component: ListPage },
-      { title: 'Connexion', component: LoginPage }
-
-
+      { title: 'Home', component: ListPage },
+      { title: 'Ajouter un tag', component: AddPage },
+      { title: 'Scanner', component: ScanPage }
     ];
 
   }

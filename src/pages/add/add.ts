@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-//import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import firebase from 'firebase';
+import 'firebase/firestore';
 
 @Component({
   selector: 'page-add',
@@ -9,24 +9,21 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 })
 export class AddPage {
 
-  constructor(public navCtrl: NavController,
-    public qrScanner: BarcodeScanner) {
-      this.qrscanner();
-  }
 
-  ionViewDidLeave() {
+  tag = {
+      Name : '' ,
+      Comment: [],
+      Owner: ''
+    };
+
+  constructor(public navCtrl: NavController) {
     
   }
 
-  qrscanner() {
-    this.qrScanner.scan().then((data) => {
-      console.log('Scanned something', data);
-
-      //this.navCtrl.push(DetailPage, {tagId: data.text});
-      //this.navCtrl.pop();
-    }).catch( (error) => {
-      console.error(error);
-    } );
-
+  addTag(){
+    var db = firebase.firestore();
+    db.collection("tag").doc().set({Name: this.tag.Name}).then( (collection)=> {
+        
+      });
   }
 }

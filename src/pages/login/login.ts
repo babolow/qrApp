@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { ListPage } from '../list/list';
 
 @Component({
   selector: 'page-login',
@@ -9,12 +9,12 @@ import { HomePage } from '../home/home';
 
 export class LoginPage {
 
-  HomePage: HomePage;
+  ListPage: ListPage;
 
   constructor(public NavCtrl:NavController){}
 
   goHomePage(){
-    this.NavCtrl.setRoot(HomePage);
+    this.NavCtrl.setRoot(ListPage);
   }
 
 }

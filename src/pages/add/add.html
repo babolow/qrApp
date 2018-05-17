@@ -4,9 +4,16 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Ajout d'un Tag</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <form (ngSubmit)="addTag()">
+        <ion-item>
+          <ion-label>Nom</ion-label>
+          <ion-input type="text" [(ngModel)]="tag.Name" name="name"></ion-input>
+        </ion-item>
+        <button ion-button type="submit" block>Ajouter un tag</button>
+      </form>
 </ion-content>
