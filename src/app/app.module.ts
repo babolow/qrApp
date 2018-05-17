@@ -6,10 +6,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { AddPage } from '../pages/add/add';
+import { LoginPage } from '../pages/login/login'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//import { QRScanner } from '@ionic-native/qr-scanner';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
@@ -17,7 +17,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     MyApp,
     HomePage,
     ListPage,
-    AddPage
+    AddPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -28,12 +29,12 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     MyApp,
     HomePage,
     ListPage,
-    AddPage
+    AddPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    //QRScanner,
     BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
